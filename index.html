@@ -10,7 +10,7 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Fasion Catalog</title>
 </head>
 <body>
     
@@ -30,7 +30,7 @@
 
                 <!-- Search -->
                 <div class="container-search d-flex">
-                    <button type="button" class="position-relative" style="z-index: 200;" id="btn-search">
+                    <button type="button" class="position-relative" id="btn-search">
                         <i class="fa fa-search"></i>
                     </button>
                     <input type="search" class="form-control position-relative" name="search" id="search" placeholder="Search here..." autocomplete="off">
@@ -40,7 +40,7 @@
 
                 <!-- hamburger menu -->
                 <div class="toggle_btn">
-                    <i class="fa-solid fa-bars-staggered color-text"></i>
+                    <i class="fa-solid fa-bars-staggered color-icon" style="color: #fff;"></i>
                 </div>
                 <!-- hamburger menu end -->
             </div>
@@ -49,21 +49,59 @@
         <!-- dropdown menu -->
         <nav class="navbar_2" id="navbar_2">
             <div class="dropdown_menu" id="dropdown_menu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="active color-text-nav">Home</a></li>
+                <li><a href="#products" class="color-text-nav">Products</a></li>
+                <li><a href="#contact" class="color-text-nav">Contact</a></li>
             </div> 
         </nav>
         <!-- dropdown menu end -->
         <!-- Navbar End -->
 
 
-        <div class="home">
-            
-        </div>
+        <section class="home" id="home">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2 g-3 pt-5" id="content-home">
+                    <div class="col col-md-6">
+                        <h1 class="text-size color-text" style="font-weight: 300;">Getting the best and latest style has never</h1>
+                        <h1 class="text-size color-text" style="color: #516BEB;"><b>been easier!</b></h1>
+                        <h3 class="text-size"></h3>
+                        <p class="text-size color-text-muted mt-4" style="text-align: justify;"><b>FashionForAll</b> is a platform that helps to make fashion accessible to all. It brings fashion to your doorstep!.</p>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="gambar">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-lg-1 mt-4">
+                    <!-- Button download CV and contacts -->
+                    <div class="col">
+                        <div class="button">
+                            <a href="#"><button type="button" style="background-color: #516BEB; color: #fff;"><i class='bx bxl-whatsapp'></i>&nbsp;Whatsapp</button></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
     </header>
 
-    <section class="products vh-100" style="background-color: #FBF9F1;" id="products">
+    <div class="status">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row row-cols-lg-3 d-flex justify-content-end align-items-center" style="padding: 20px 60px;">
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, laudantium.</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, laudantium.</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, laudantium.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="products" style="background-color: #FBF9F1;" id="products">
 
     </section>
 </div>

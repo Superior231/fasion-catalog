@@ -1,15 +1,19 @@
 // Navbar
 const Navbar          = document.querySelector(".navbar"),
-      NavDropdownMenu = document.querySelector(".navbar_2");
+      NavDropdownMenu = document.querySelector(".navbar_2"),
+      hamburgerMenu   = document.querySelector(".color-icon");
 
 
 window.addEventListener("scroll", () => {
     if(window.pageYOffset > 0.1) {
-        NavDropdownMenu.classList.add("fixed-top");
+        NavDropdownMenu.classList.add("fixed-top", "background");
         Navbar.classList.add("fixed-top", "background");
+        hamburgerMenu.classList.add("dark");
     }
     else {
+        NavDropdownMenu.classList.remove("fixed-top", "background");
         Navbar.classList.remove("fixed-top", "background");
+        hamburgerMenu.classList.remove("dark");
     }
 });
 
@@ -62,8 +66,8 @@ toggleBtn.onclick = function() {
     const isOpen = dropDownMenu.classList.contains("open")
 
     toggleBtnIcon.classList = isOpen
-    ? "fa-solid fa-xmark text-light"
-    : "fa-solid fa-bars-staggered text-light"
+    ? "fa-solid fa-xmark color-icon"
+    : "fa-solid fa-bars-staggered color-icon"
 }
 
 // Hamburger Menu End
