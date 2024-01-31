@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-    --body-color: #fbf9f1;
+    --body-color: #f7fbfc;
     --primary-color: #516BEB;
     --secondary-color: #161326;
     --text-color: #fff;
@@ -20,9 +20,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 .body {
     background-color: var(--body-color);
 }
+
 
 
 
@@ -326,13 +330,29 @@ input#search:focus {
     text-align: center;
     padding-bottom: 3px;
 }
+.home .gambar .img-home {
+    rotate: 350deg;
+    width: 180px;
+    border-radius: 50px;
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.5);
+}
+.home .gambar .img-home:nth-child(1) {
+    rotate: 0deg;
+    width: 200px;
+}
 
 .status {
     background-color: transparent;
     margin-top: -30px;
 }
+.status .card {
+    border-radius: 25px;
+}
 
 .products {
+    background-color: var(--body-color);
     height: 100vh;
 }
 /* Home End */
