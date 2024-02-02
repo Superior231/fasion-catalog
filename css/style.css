@@ -43,29 +43,29 @@ html {
 
 @media (max-width: 768px) {
     .container h1.text-size {
-        font-size: 25px;
+        font-size: clamp(25px, 5vw, 35px);
     }
     .container h2.text-size {
-        font-size: 22px;
+        font-size: clamp(22px, 4vw, 32px);
     }
     .container h3.text-size {
-        font-size: 20px;
+        font-size: clamp(20px, 3.5vw, 30px);
     }
-    .container h4.text-size {
-        font-size: 15px;
+      .container h4.text-size {
+        font-size: clamp(15px, 3vw, 25px);
     }
     .container h5.text-size {
-        font-size: 14px;
+        font-size: clamp(14px, 2.5vw, 24px);
     }
     .container h6.text-size,
     .container span.text-size {
-        font-size: 10px;
+        font-size: clamp(10px, 2vw, 20px);
     }
     .container p.text-size,
     .container a.text-size,
     .container ol.text-size,
-    .container li.text-size {
-        font-size: 12px;
+    .container li.text-size  {
+        font-size: clamp(12px, 2.5vw, 22px);
     }
 }
 
@@ -73,7 +73,64 @@ html {
 
 /* RESPONSIF */
 /* Width */
-@media (max-width: 768px) {}
+@media (min-width: 769px) {
+    .navbar #logo {
+        display: block;
+    }
+    .navbar .container-search {
+        display: flex !important;
+    }
+    .navbar .container-search-mobile {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 0px 30px 10px 30px;
+    }
+
+    /* Navbar */
+    .navbar #navbar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .navbar .navbar-brand {
+        order: 2;
+    }
+    .navbar .toggle_btn {
+        order: 1;
+    }
+    .navbar .container-search {
+        display: none !important;
+    }
+    .navbar .container-search-mobile {
+        order: 3;
+        display: flex !important;
+    }
+
+    /* Home */
+    .home #content-home {
+        padding-top: 15px !important;
+    }
+    .home #col-title {
+        order: 2;
+        margin-top: 40px;
+    }
+    .home #col-gambar {
+        order: 1;
+    }
+    .home #col-gambar > .gambar {
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+    }
+    .home #col-gambar > .gambar > img {
+        width: 30%;
+    }
+}
 
 /* Height */
 @media (max-width: 400px) AND (max-height: 600px) {}
@@ -200,7 +257,7 @@ html {
 .navbar_2 .dropdown_menu {
     display: none;
     position: absolute;
-    right: 1px;
+    left: 1px;
     top: 50px;
     width: 200px;
     height: 0;
@@ -256,6 +313,8 @@ html {
 }
 /* Hamburger Menu End */
 
+
+/* Search */
 .container-search {
     background-color: transparent;
     border-radius: 50px;
@@ -267,6 +326,10 @@ html {
     background: transparent;
     color: var(--text-color);
     transition: ease .5s;
+}
+.container-search-mobile:focus-within {
+    border: none;
+    color: var(--text-color);
 }
 .navbar.background > .container > .container-search:focus-within {
     box-shadow: 0 0 0 0.1px var(--text-color-dark);
@@ -281,7 +344,8 @@ html {
     color: var(--text-color);
     width: 100%;
 }
-.navbar.background > .container > .container-search #search {
+.navbar.background > .container > .container-search #search,
+.navbar.background > .container > .container-search-mobile #search {
     color: var(--text-color-dark);
 }
 input#search:focus {
@@ -289,21 +353,53 @@ input#search:focus {
     color: none;
     background-color: transparent;
 }
-#btn-search {
+#btn-search,
+#btn-close {
     border: none;
     background-color: transparent;
     margin-left: 20px;
 }
-#btn-search i {
+#btn-search i,
+#btn-close i {
     color: var(--input-color);
 }
-.container-search:focus-within #btn-search i {
+.container-search:focus-within #btn-search i,
+.container-search-mobile:focus-within #btn-search i,
+.container-search-mobile:focus-within #btn-close i {
     color: var(--input-color-focus);
     transition: ease .5s;
 }
-.navbar.background > .container > .container-search:focus-within #btn-search i {
+.navbar.background > .container > .container-search:focus-within #btn-search i,
+.navbar.background > .container > .container-search-mobile:focus-within #btn-search i,
+.navbar.background > .container > .container-search-mobile:focus-within #btn-close i {
     color: var(--text-color-dark);
     transition: ease .5s;
+}
+
+/* Search Mobile */
+.navbar .navbar-brand.search-active,
+.navbar .toggle_btn.search-active {
+    display: none;
+}
+
+.navbar .container-search-mobile.active {
+    width: 100%;
+}
+.navbar .container-search-mobile.active input {
+    display: block;
+}
+.navbar .container-search-mobile input {
+    display: none;
+}
+.navbar .container-search-mobile #btn-close {
+    display: none;
+}
+.navbar .container-search-mobile.active #btn-close {
+    display: block;
+}
+.navbar .container-search-mobile #btn-search,
+.navbar .container-search-mobile #btn-close {
+    margin: 0px;
 }
 /* Navbar End */
 

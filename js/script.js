@@ -66,12 +66,39 @@ toggleBtn.onclick = function() {
     const isOpen = dropDownMenu.classList.contains("open")
 
     toggleBtnIcon.classList = isOpen
-    ? "fa-solid fa-xmark color-icon"
-    : "fa-solid fa-bars-staggered color-icon"
+    ? "fa-solid fa-xmark color-icon dark"
+    : "fa-solid fa-bars-staggered color-icon dark"
 }
-
 // Hamburger Menu End
+
+
+// Search Button
+const inputSearchMobile = document.querySelector("#search-mobile input");
+const btnSearch = document.querySelector(".container-search-mobile #btn-search");
+const btnClose = document.getElementById("btn-close");
+const containerSearchMobile = document.querySelector(".container-search-mobile");
+const logo = document.querySelector("#logo");
+const btnMenu = document.querySelector(".toggle_btn");
+
+btnSearch.addEventListener("click", () => {
+  containerSearchMobile.classList.add("active");
+  btnClose.classList.add("active");
+  btnSearch.classList.add("active");
+  logo.classList.add("search-active");
+  btnMenu.classList.add("search-active");
+});
+
+// Close Button
+btnClose.addEventListener("click", () => {
+  containerSearchMobile.classList.remove("active");
+  btnClose.classList.remove("active");
+  btnSearch.classList.remove("active");
+  logo.classList.remove("search-active");
+  btnMenu.classList.remove("search-active");
+  inputSearchMobile.value = "";
+});
 // Navbar End
+
 
 
 // Animasi Scroll
